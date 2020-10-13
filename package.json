@@ -1,0 +1,25 @@
+{
+  "name": "hw-videogames-api",
+  "version": "1.0.0",
+  "description": "// VideoGames API Creation",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dallasclarke/hw-videogames-api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dallasclarke/hw-videogames-api/issues"
+  },
+  "homepage": "https://github.com/dallasclarke/hw-videogames-api#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "morgan": "^1.10.0"
+  }
+}
