@@ -38,9 +38,42 @@ module.exports = {
         newGame.yearReleased = req.body.yearReleased;
         newGame.playTime = req.body.playTime;
         newGame.id = String(games.length + 1);
-    
         games.push(newGame);
     
         return res.status(200).json({confirmation: 'Success', newGame});
+    },
+    updateGame: (req, res) => {
+        let updateGame = req.body;
+        games.filter((foundGame) => {
+            if (foundGame.id === req.params.id) {
+                foundGame.name = updateGame.name
+                ? updateGame.name
+                : foundGame.name
+    
+                foundGame.description = updateGame.description
+                ? updateGame.description
+                : foundGame.description
+    
+                foundGame.yearReleased = updateGame.yearReleased
+                ? updateGame.yearReleased
+                : foundGame.yearReleased
+    
+                foundGame.playTime = updateGame.playTime
+                ? updateGame.playTime
+                : foundGame.playTime
+            }
+        })
+            return res
+            .status(200)
+            .json({message: "Game updated", games})
+    },
+    deleteGame: (req, res) => {
+        let removedGame = games.filter((foundGame) => {
+            return foundGame.id !== req.params.id;
+        })
+        games = removedGame;
+        return res
+        .status(200)
+        .json({confirmation: "success", games})
     }
 };
