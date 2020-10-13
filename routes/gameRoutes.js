@@ -1,13 +1,11 @@
 const express = require('express');
 const router = express.Router();
 let games = require('../models/game');
+const {getAllGames, getSingleGame} = require('../controllers/userControllers');
 
+router.get('/all-games', getAllGames);
+router.get('/single-game/:id', getSingleGame);
 
-router.get('/all-games', (req, res) => {
-    return res
-    .status(200)
-    .json({confirmation: 'success', games})
-});
 
 
 
